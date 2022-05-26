@@ -66,8 +66,7 @@ class HelpCard:
             HelpCard.allHelpCard[0].setIcon(
                 QtGui.QIcon(f"Card/{HelpCard.allHelpCard[0].value} {HelpCard.allHelpCard[0].suit}.png"))
             HelpCard.allHelpCard[0].move(980, 50)
-            HelpCard.allHelpCard[
-                0].cardIcon = f"Card/{HelpCard.allHelpCard[0].value} {HelpCard.allHelpCard[0].suit}.png"
+            HelpCard.allHelpCard[0].cardIcon = f"Card/{HelpCard.allHelpCard[0].value} {HelpCard.allHelpCard[0].suit}.png"
             HelpCard.allDeskHelpCard.append(HelpCard.allHelpCard[0])
             del HelpCard.allHelpCard[0]
         elif HelpCard.allHelpCard[-1].suit is None:
@@ -92,10 +91,8 @@ class Back:
         for i in range(len(Back.allDeskCard)):
             for j in range(i):
                 if (Back.allDeskCard[i][j]).isHidden() and (Back.allDeskCard[i][j + 1]).isHidden():
-                    (Back.allDeskCard[i - 1][j]).setIcon(QtGui.QIcon(
-                        f"Card/{(Back.allDeskCard[i - 1][j]).value} {(Back.allDeskCard[i - 1][j]).suit}.png"))
-                    (Back.allDeskCard[i - 1][
-                        j]).cardIcon = f"Card/{(Back.allDeskCard[i - 1][j]).value} {(Back.allDeskCard[i - 1][j]).suit}.png"
+                    (Back.allDeskCard[i - 1][j]).setIcon(QtGui.QIcon(f"Card/{(Back.allDeskCard[i - 1][j]).value} {(Back.allDeskCard[i - 1][j]).suit}.png"))
+                    (Back.allDeskCard[i - 1][j]).cardIcon = f"Card/{(Back.allDeskCard[i - 1][j]).value} {(Back.allDeskCard[i - 1][j]).suit}.png"
 
 
 class CheckWin:
@@ -167,8 +164,7 @@ class MainField(QtWidgets.QMainWindow):
         random.shuffle(allCard)
         for i in range(6):
             for j in range(i + 1):
-                CreateGameField(allCard[0].split(" ")[0], allCard[0].split(" ")[1], i, ((6 - i) + (j * 2)) * 100,
-                                self.ui)
+                CreateGameField(allCard[0].split(" ")[0], allCard[0].split(" ")[1], i, ((6 - i) + (j * 2)) * 100, self.ui)
                 del allCard[0]
 
         CreateGameField(None, None, 0, 1139, self.ui)
